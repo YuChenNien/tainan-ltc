@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Ico from '../components/Ico.astro';
-import { url } from '../lib/data';
+import { url, BASE } from '../lib/data';
 interface Props { title: string; description?: string; }
 const { title, description = '整理台南市政府公開資料，查詢並比較住宿式長照機構的評鑑、床位與收費上限。' } = Astro.props;
 ---
@@ -21,6 +21,7 @@ const { title, description = '整理台南市政府公開資料，查詢並比�
       <div class="wrap header-in">
         <a class="brand" href={url('/')}><Ico name="home" size={26} /><span>台南長照住宿機構查詢</span></a>
         <nav aria-label="主選單">
+          <a href={url('/compare/')}><Ico name="compare" size={20} />比較<span class="badge" id="nav-cmp" hidden></span></a>
           <a href={url('/styleguide/')}><Ico name="info" size={20} />版面與圖示</a>
         </nav>
       </div>
@@ -32,5 +33,51 @@ const { title, description = '整理台南市政府公開資料，查詢並比�
         <p>本站為民間整理，非政府網站。評鑑、床位、收費資料以主管機關與機構公告為準；收費僅有官方「上限」，實際費用請洽機構報價。</p>
       </div>
     </footer>
+    <div id="cmpbar" class="cmpbar" hidden>
+      <div class="wrap cmpbar-in">
+        <p id="cmptext" aria-live="polite"></p>
+        <button type="button" class="btn-line" id="cmpclear">清除</button>
+        <a class="btn" id="cmpgo" href={url('/compare/')}><Ico name="compare" size={20} />開始比較</a>
+      </div>
+    </div>
+    <script is:inline define:vars={{ base: BASE }}>
+      (function () {
+        var KEY = 'tnltc-compare', MAX = 4;
+        function load() { try { var a = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(a) ? a.slice(0, MAX) : []; } catch (e) { return []; } }
+        function save(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
+        window.tnCmp = { load: load, save: save, MAX: MAX, base: base, sync: sync };
+        function sync() {
+          var ids = load();
+          document.querySelectorAll('.cmp-box').forEach(function (b) {
+            b.checked = ids.indexOf(b.dataset.id) >= 0;
+            b.disabled = !b.checked && ids.length >= MAX;
+            var s = b.nextElementSibling; if (s) s.dataset.full = b.disabled ? '1' : '';
+          });
+          var bar = document.getElementById('cmpbar'), nav = document.getElementById('nav-cmp');
+          if (nav) { nav.hidden = ids.length === 0; nav.textContent = ids.length; }
+          if (!bar) return;
+          var onCompare = !!document.getElementById('compare-root');
+          bar.hidden = ids.length === 0 || onCompare;
+          document.getElementById('cmptext').textContent = '已選 ' + ids.length + ' / ' + MAX + ' 家' + (ids.length < 2 ? '（至少選 2 家才能比較）' : '') + (ids.length >= MAX ? '（已達上限）' : '');
+          var go = document.getElementById('cmpgo');
+          go.href = base + '/compare/?ids=' + ids.join(',');
+          go.setAttribute('aria-disabled', ids.length < 2 ? 'true' : 'false');
+          go.classList.toggle('disabled', ids.length < 2);
+        }
+        document.addEventListener('change', function (e) {
+          var b = e.target; if (!b.classList || !b.classList.contains('cmp-box')) return;
+          var ids = load(), i = ids.indexOf(b.dataset.id);
+          if (b.checked && i < 0 && ids.length < MAX) ids.push(b.dataset.id);
+          if (!b.checked && i >= 0) ids.splice(i, 1);
+          save(ids); sync();
+        });
+        document.addEventListener('click', function (e) {
+          if (e.target.closest && e.target.closest('#cmpgo.disabled')) e.preventDefault();
+          if (e.target.id === 'cmpclear') { save([]); sync(); document.dispatchEvent(new Event('cmp-cleared')); }
+        });
+        window.addEventListener('pageshow', sync);
+        sync();
+      })();
+    </script>
   </body>
 </html>

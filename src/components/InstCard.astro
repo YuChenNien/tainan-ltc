@@ -22,5 +22,6 @@ const tags = serviceTags(inst);
     <GradeBadge inst={inst} set={set} />
     <p class="meta"><Ico name="bed" set={set} size={18} />{bedsText(inst)}</p>
     <p class="meta"><Ico name="money" set={set} size={18} />{feeText(inst)}</p>
+    <label class="cmp"><input type="checkbox" class="cmp-box" data-id={inst.id} data-name={inst.name} /><span>加入比較</span></label>
   </div>
 </article>

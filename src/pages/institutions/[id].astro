@@ -39,6 +39,7 @@ const special = Object.entries(FEES.special_nursing_long_term) as [string, strin
       <h1>{i.name}</h1>
       <p class="meta"><Ico name="pin" size={20} />{i.address}</p>
       <GradeBadge inst={i} />
+      <label class="cmp cmp-big"><input type="checkbox" class="cmp-box" data-id={i.id} data-name={i.name} /><span>加入比較（最多 4 家）</span></label>
     </header>
 
     <div class="detail-grid">
