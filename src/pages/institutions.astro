@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Ico from '../components/Ico.astro';
+import InstCard from '../components/InstCard.astro';
+import { TYPES, insts, sortByGrade, gradeInfo } from '../lib/data';
+
+const groups = TYPES.map((t) => ({ t, list: sortByGrade(insts.filter((i) => i.category === t.key)) }));
+
+// 在「老人福利機構」內再依評鑑等第分段，方便一眼看出順序
+function bands(list) {
+  const out: { title: string; tone: string; items: typeof list }[] = [];
+  for (const i of list) {
+    const g = gradeInfo(i);
+    const title = g.text;
+    const last = out[out.length - 1];
+    if (last && last.title === title) last.items.push(i);
+    else out.push({ title, tone: g.tone, items: [i] });
+  }
+  return out;
+}
+---
+<Layout title="全部機構">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>全部機構（{insts.length} 家）</h1>
+      <p class="note">
+        <strong>排列方式：</strong>先依「單位類型」分三區；每區內依評鑑等第由好到差排列（優等、甲等／合格、乙等、丙等、不合格，最後是尚未評鑑或無評鑑資料），同等第內「評鑑年度較新」的排前面。
+        不同單位類型的評鑑制度不同，不能直接比高低，所以不混在一起排。
+      </p>
+      <div class="jump" aria-label="跳到單位類型">
+        {groups.map(({ t, list }) => (
+          <a class={t.cls} href={`#${t.cls}`}><Ico name={t.icon} size={20} />{t.short}（{list.length}）</a>
+        ))}
+      </div>
+    </div>
+
+    {groups.map(({ t, list }) => (
+      <section id={t.cls} class={t.cls}>
+        <div class="group-head"><Ico name={t.icon} size={30} /><h2>{t.short}（{list.length} 家）</h2></div>
+        <p class="group-desc">{t.desc}</p>
+        {bands(list).map((b) => (
+          <div>
+            <h3 class="subhead"><span class={`grade tone-${b.tone}`}><strong>{b.title}</strong></span>共 {b.items.length} 家</h3>
+            <div class="card-grid">
+              {b.items.map((i) => <InstCard inst={i} />)}
+            </div>
+          </div>
+        ))}
+      </section>
+    ))}
+  </div>
+</Layout>

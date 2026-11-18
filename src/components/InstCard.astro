@@ -1,0 +1,26 @@
+---
+import Ico from './Ico.astro';
+import GradeBadge from './GradeBadge.astro';
+import { typeOf, serviceTags, bedsText, feeText, type Inst } from '../lib/data';
+interface Props { inst: Inst; set?: 'lucide' | 'tabler'; }
+const { inst, set } = Astro.props;
+const t = typeOf(inst);
+const tags = serviceTags(inst);
+---
+<article class={`card ${t.cls}`}>
+  <div class="card-media" role="img" aria-label="尚無實景照片，以類型插圖代替">
+    <Ico name={t.icon} set={set} size={52} />
+    <span class="nophoto"><Ico name="nophoto" set={set} size={16} />尚無實景照片</span>
+  </div>
+  <div class="card-body">
+    <div class="tags">
+      <span class="tag tag-type"><Ico name={t.icon} set={set} size={16} />{t.short}</span>
+      {tags.map((x) => <span class="tag">{x}</span>)}
+    </div>
+    <h3 class="card-title">{inst.name}</h3>
+    <p class="meta"><Ico name="pin" set={set} size={18} />臺南市{inst.district}</p>
+    <GradeBadge inst={inst} set={set} />
+    <p class="meta"><Ico name="bed" set={set} size={18} />{bedsText(inst)}</p>
+    <p class="meta"><Ico name="money" set={set} size={18} />{feeText(inst)}</p>
+  </div>
+</article>

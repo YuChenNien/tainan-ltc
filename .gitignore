@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+data/work/*.png
+data/work/*.html
+data/work/*.txt
+*.log
+data/raw/

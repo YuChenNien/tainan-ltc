@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Ico from '../components/Ico.astro';
+import InstCard from '../components/InstCard.astro';
+import { TYPES, insts, districts, countBy, sortByGrade, url } from '../lib/data';
+
+const needs = [
+  { key: '養護型', icon: 'welfare', hint: '一般失能，生活自理能力缺損' },
+  { key: '長照型', icon: 'tube', hint: '管路（鼻胃管、導尿管）或長期臥床' },
+  { key: '失智型', icon: 'brain', hint: '收住對象含失智症' },
+  { key: '安養型', icon: 'sofa', hint: '生活能自理' },
+];
+// 首頁預覽：每種單位類型各挑一家評鑑最好的當示範
+const demo = TYPES.map((t) => sortByGrade(insts.filter((i) => i.category === t.key))[0]);
+---
+<Layout title="首頁">
+  <section class="hero">
+    <div class="wrap">
+      <h1>幫家人找台南的住宿式長照機構</h1>
+      <p class="lead">整理政府公開資料：評鑑等第、床位、收費上限、聯絡方式。可以並排比較，也能估算每月費用。</p>
+      <form class="finder" action={url('/institutions/')} method="get">
+        <h2>從這裡開始找</h2>
+        <div class="field">
+          <label for="district">想住哪一區？</label>
+          <select id="district" name="district">
+            <option value="">台南市全部地區</option>
+            {districts.map((d) => <option value={d}>{d}</option>)}
+          </select>
+        </div>
+        <fieldset class="field">
+          <legend>長輩的狀況（可複選，不選就是全部）</legend>
+          <div class="chips">
+            {needs.map((n) => (
+              <label class="chip"><input type="checkbox" name="need" value={n.key} />
+                <span><Ico name={n.icon} size={20} />{n.key}</span></label>
+            ))}
+          </div>
+          <p class="hint">養護型＝一般失能　長照型＝管路或長期臥床　失智型＝收住失智症　安養型＝生活能自理</p>
+        </fieldset>
+        <button class="btn" type="submit"><Ico name="search" size={22} />查詢機構</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section">
+      <div class="section-title"><Ico name="home" size={28} /><h2 style="margin:0">依單位類型瀏覽</h2></div>
+      <div class="type-tiles">
+        {TYPES.map((t) => (
+          <a class={`tile ${t.cls}`} href={url(`/institutions/#${t.cls}`)}>
+            <div class="tile-head"><Ico name={t.icon} size={28} />{t.short}</div>
+            <div class="count">{countBy(t.key)} 家</div>
+            <p>{t.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><Ico name="shield" size={28} /><h2 style="margin:0">資料怎麼看才不會誤會</h2></div>
+      <div class="trust">
+        <div><h3><Ico name="award" size={24} />評鑑一定標年度</h3><p>很多機構最近一次評鑑是 109 年，我們會把年度跟等第放在一起，不讓舊結果看起來像新的。</p></div>
+        <div><h3><Ico name="money" size={24} />收費是「上限」</h3><p>官方只公告收費上限，不是實際價格。實際費用請向機構詢問報價。</p></div>
+        <div><h3><Ico name="calendar" size={24} />每筆都有來源與日期</h3><p>每項資料都標示來源機關與更新日期，查不到的欄位寫「待確認」，不亂猜。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><Ico name="compare" size={28} /><h2 style="margin:0">機構卡片長這樣（示範）</h2></div>
+      <div class="card-grid">
+        {demo.map((i) => <InstCard inst={i} />)}
+      </div>
+      <p style="margin-top:20px"><a class="btn btn-line" href={url('/institutions/')}>看全部 {insts.length} 家機構<Ico name="arrow" size={20} /></a></p>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Ico from '../components/Ico.astro';
+import GradeBadge from '../components/GradeBadge.astro';
+import InstCard from '../components/InstCard.astro';
+import { ICONS, insts, TYPES } from '../lib/data';
+
+const names = Object.keys(ICONS);
+const label: Record<string, string> = {
+  welfare: '老人福利機構', nursing: '護理之家', ltc: '住宿式長照', bed: '床位', home: '機構／首頁', pin: '地點', phone: '電話',
+  money: '收費', shield: '資料可信', award: '評鑑（優）', badge: '評鑑（甲／合格）', ok: '評鑑（乙）', bad: '不合格', warn: '丙等／提醒',
+  unknown: '待確認／無資料', users: '收住對象', calendar: '日期', link: '外部連結', search: '搜尋', compare: '比較', calc: '費用試算',
+  nophoto: '尚無照片', info: '說明', brain: '失智型', tube: '長照型（管路）', sofa: '安養型', map: '地圖', file: '文件', arrow: '前往',
+};
+const swatches = [
+  ['主色（按鈕、連結）', '#1d5a8a', '#fff'], ['主色深', '#154569', '#fff'], ['主色淡', '#e3eef7', '#1f2933'],
+  ['文字', '#1f2933', '#fff'], ['次要文字', '#52606d', '#fff'], ['背景', '#f7f4ee', '#1f2933'],
+  ['老人福利機構', '#1d5a8a', '#fff'], ['護理之家', '#2c6b4f', '#fff'], ['住宿式長照', '#8a4b17', '#fff'],
+];
+const gradeSamples = [
+  ['優', '109年'], ['甲', '109年'], ['合格', '114年'], ['乙', '109年'], ['丙', '111年'], ['不合格', '114年'], ['未評鑑', '—'], ['無評鑑資料', '—'],
+];
+const mk = (g: string, y: string) => ({ ...insts[0], eval_grade: g, eval_year: y }) as any;
+const sampleNoPhoto = insts.find((i) => i.category === '住宿式長照機構')!;
+---
+<Layout title="版面與圖示">
+  <div class="wrap">
+    <div class="page-head"><h1>版面與圖示（請挑選）</h1>
+      <p class="note">這頁是給你<strong>挑選風格</strong>用的，上線前會移除。請看完告訴我：①圖示要選哪一組（A 或 B）；②字體大小與顏色是否清楚。</p></div>
+
+    <section class="section" style="padding-top:8px">
+      <div class="section-title"><h2 style="margin:0">圖示：A 組（Lucide）與 B 組（Tabler）</h2></div>
+      <p>兩組都是免費、開放原始碼、可商用的圖示庫。每個圖示旁邊一律搭配文字，不會只靠圖示。</p>
+      <div style="overflow-x:auto">
+      <table class="icon-table">
+        <thead><tr><th>用途</th><th>A 組 Lucide</th><th>B 組 Tabler</th></tr></thead>
+        <tbody>
+          {names.map((n) => (
+            <tr><td>{label[n] ?? n}</td>
+              <td><Ico name={n} set="lucide" size={32} /></td>
+              <td><Ico name={n} set="tabler" size={32} /></td></tr>
+          ))}
+        </tbody>
+      </table></div>
+      <p class="hint">授權：Lucide 為 ISC 授權，Tabler Icons 為 MIT 授權，皆可商用，網站「關於本站」會註明。</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2 style="margin:0">評鑑等第徽章（圖示＋文字＋顏色＋年度）</h2></div>
+      <p>不只靠顏色區分，色弱的人也能看懂。年度永遠跟等第放在一起。</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        {gradeSamples.map(([g, y]) => <GradeBadge inst={mk(g, y)} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2 style="margin:0">文字大小與顏色</h2></div>
+      <p style="font-size:1rem">內文 18px（手機 17px）：這是一般說明文字，行距寬鬆，方便閱讀。</p>
+      <p style="font-size:.95rem;color:var(--muted)">次要說明文字：用在資料來源、備註。</p>
+      <div class="swatches">
+        {swatches.map(([n, bg, fg]) => <div class="sw" style={`background:${bg};color:${fg}`}><strong>{n}</strong><br />{bg}</div>)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2 style="margin:0">卡片：A 組圖示與 B 組圖示對照</h2></div>
+      <p>同一家機構的卡片，左邊用 A 組、右邊用 B 組。沒有照片時，顯示類型插圖與「尚無實景照片」。</p>
+      <div class="card-grid">
+        <InstCard inst={sampleNoPhoto} set="lucide" />
+        <InstCard inst={sampleNoPhoto} set="tabler" />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2 style="margin:0">三種單位類型的代表色與圖示</h2></div>
+      <div class="type-tiles">
+        {TYPES.map((t) => (
+          <div class={`tile ${t.cls}`}><div class="tile-head"><Ico name={t.icon} size={28} />{t.short}</div><p>{t.desc}</p></div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>

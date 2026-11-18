@@ -1,0 +1,1559 @@
+[
+ {
+  "no": 1,
+  "name": "台南市私立長佳護理之家",
+  "code": "7405320066",
+  "district": "東區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "東區"
+  ],
+  "addresses": [
+   "臺南市東區崇學路230巷59號4-5樓"
+  ],
+  "phone": "06-5101333",
+  "bed_lic": "41",
+  "bed_open": "41",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 2,
+  "name": "美佑護理之家",
+  "code": "7421011383",
+  "district": "東區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "東區"
+  ],
+  "addresses": [
+   "臺南市東區崇明十八街5號1-4樓"
+  ],
+  "phone": "06-2603355",
+  "bed_lic": "74",
+  "bed_open": "74",
+  "vent_lic": "1",
+  "vent_open": "1",
+  "day": "0"
+ },
+ {
+  "no": 3,
+  "name": "德光護理之家",
+  "code": "7405320084",
+  "district": "東區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "東區"
+  ],
+  "addresses": [
+   "臺南市東區崇德路160號1-4樓"
+  ],
+  "phone": "06-2893355",
+  "bed_lic": "80",
+  "bed_open": "62",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 4,
+  "name": "開元寺慈愛醫院附設護理之家",
+  "code": "7405350064",
+  "district": "北區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "北區"
+  ],
+  "addresses": [
+   "臺南市北區北園街89-1號2樓"
+  ],
+  "phone": "06-2088818",
+  "bed_lic": "80",
+  "bed_open": "80",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 5,
+  "name": "聖公護理之家",
+  "code": "7405350019",
+  "district": "北區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "北區"
+  ],
+  "addresses": [
+   "臺南市北區文成路785號1-2樓"
+  ],
+  "phone": "06-2591081",
+  "bed_lic": "87",
+  "bed_open": "86",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "20"
+ },
+ {
+  "no": 6,
+  "name": "天慈護理之家",
+  "code": "7405330133",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區三官路91號"
+  ],
+  "phone": "06-2921088",
+  "bed_lic": "89",
+  "bed_open": "89",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 7,
+  "name": "台南市私立迦南美地護理之家",
+  "code": "7405330115",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區德興路139巷44弄38號1-3樓"
+  ],
+  "phone": "06-2654567",
+  "bed_lic": "70",
+  "bed_open": "70",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 8,
+  "name": "永春護理之家",
+  "code": "7405330142",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區永春街7號1-4樓"
+  ],
+  "phone": "06-2910236",
+  "bed_lic": "80",
+  "bed_open": "80",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 9,
+  "name": "萬年護理之家",
+  "code": "7405330124",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區省躬里14鄰萬年路160巷6號1-4樓"
+  ],
+  "phone": "06-2963777",
+  "bed_lic": "66",
+  "bed_open": "66",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 10,
+  "name": "德濟護理之家",
+  "code": "7405330026",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區水交社路335號"
+  ],
+  "phone": "06-2911218",
+  "bed_lic": "80",
+  "bed_open": "80",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 11,
+  "name": "錫安護理之家",
+  "code": "7405330099",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區大同路2段482巷45號B1-5樓"
+  ],
+  "phone": "06-2155511",
+  "bed_lic": "51",
+  "bed_open": "51",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 12,
+  "name": "安柏護理之家",
+  "code": "7405330151",
+  "district": "南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "南區"
+  ],
+  "addresses": [
+   "臺南市南區萬年一街208號B1-4樓"
+  ],
+  "phone": "06-2961235",
+  "bed_lic": "98",
+  "bed_open": "98",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 13,
+  "name": "十全診所附設護理之家",
+  "code": "7621051042",
+  "district": "中西區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "中西區"
+  ],
+  "addresses": [
+   "臺南市中西區永福路2段3號2-4樓"
+  ],
+  "phone": "06-2265088",
+  "bed_lic": "35",
+  "bed_open": "35",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 14,
+  "name": "永和醫院附設護理之家",
+  "code": "7621051033",
+  "district": "中西區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "中西區"
+  ],
+  "addresses": [
+   "臺南市中西區府前路1段304巷2號2樓、永福路2段35巷58號4-5樓"
+  ],
+  "phone": "06-2231191#201",
+  "bed_lic": "84",
+  "bed_open": "84",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 15,
+  "name": "全人護理之家",
+  "code": "7405340120",
+  "district": "中西區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "中西區"
+  ],
+  "addresses": [
+   "臺南市中西區西賢一街187巷1號1-4樓"
+  ],
+  "phone": "06-3583456",
+  "bed_lic": "99",
+  "bed_open": "55",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 16,
+  "name": "國欣護理之家",
+  "code": "7405340068",
+  "district": "中西區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "中西區"
+  ],
+  "addresses": [
+   "臺南市中西區和平街23號B1-4樓"
+  ],
+  "phone": "06-2202111",
+  "bed_lic": "130",
+  "bed_open": "130",
+  "vent_lic": "3",
+  "vent_open": "3",
+  "day": "0"
+ },
+ {
+  "no": 17,
+  "name": "衛生福利部臺南醫院附設護理之家",
+  "code": "7521050016",
+  "district": "中西區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "中西區"
+  ],
+  "addresses": [
+   "臺南市中西區中山路125號4樓及5樓(西側)"
+  ],
+  "phone": "06-2200055",
+  "bed_lic": "51",
+  "bed_open": "51",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 18,
+  "name": "如新護理之家",
+  "code": "7405380044",
+  "district": "安平區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "安平區"
+  ],
+  "addresses": [
+   "臺南市安平區健康三街590號1-5樓"
+  ],
+  "phone": "06-2976868",
+  "bed_lic": "176",
+  "bed_open": "176",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 19,
+  "name": "德醫護理之家",
+  "code": "7405380062",
+  "district": "安平區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "安平區"
+  ],
+  "addresses": [
+   "臺南市安平區平通里育平7街115號"
+  ],
+  "phone": "06-2932658",
+  "bed_lic": "83",
+  "bed_open": "83",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 20,
+  "name": "臺南市立安南醫院附設護理之家",
+  "code": "7305370046",
+  "district": "安南區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "安南區"
+  ],
+  "addresses": [
+   "臺南市安南區長和路2段66號第二醫療大樓3、4樓"
+  ],
+  "phone": "06-3553111",
+  "bed_lic": "200",
+  "bed_open": "200",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 21,
+  "name": "弘安護理之家",
+  "code": "7405310042",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區大同街821號"
+  ],
+  "phone": "06-2331515",
+  "bed_lic": "48",
+  "bed_open": "48",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 22,
+  "name": "永保安康護理之家",
+  "code": "7405310202",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區中華西街83號1-3樓"
+  ],
+  "phone": "06-3038888",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 23,
+  "name": "永康廣善護理之家",
+  "code": "7405310131",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區智慧科學大道二段801巷33號1-2樓"
+  ],
+  "phone": "06-2073722",
+  "bed_lic": "129",
+  "bed_open": "129",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 24,
+  "name": "宜聖護理之家",
+  "code": "7405310168",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區大橋五街153號1-2樓"
+  ],
+  "phone": "06-3027655",
+  "bed_lic": "75",
+  "bed_open": "35",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 25,
+  "name": "怡安護理之家",
+  "code": "7441310020",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區南工街212巷13弄2號、2-1號"
+  ],
+  "phone": "06-2015382",
+  "bed_lic": "67",
+  "bed_open": "67",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 26,
+  "name": "悅榕護理之家",
+  "code": "7405310211",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區龍潭里中山北路258號1-4樓"
+  ],
+  "phone": "06-2018179",
+  "bed_lic": "140",
+  "bed_open": "140",
+  "vent_lic": "10",
+  "vent_open": "10",
+  "day": "0"
+ },
+ {
+  "no": 27,
+  "name": "悅豪護理之家",
+  "code": "7405310104",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區中山北路256號1-2樓"
+  ],
+  "phone": "06-2333166",
+  "bed_lic": "91",
+  "bed_open": "91",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 28,
+  "name": "晉生醫療社團法人附設晉生護理之家",
+  "code": "7305310013",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區中山南路902巷5號3-6樓"
+  ],
+  "phone": "06-2330003",
+  "bed_lic": "118",
+  "bed_open": "118",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 29,
+  "name": "高雄榮民總醫院臺南分院附設護理之家",
+  "code": "7541310513",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區復興路427號"
+  ],
+  "phone": "06-3125101",
+  "bed_lic": "268",
+  "bed_open": "268",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 30,
+  "name": "康詠護理之家",
+  "code": "7405310122",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區二王里二王路30巷2號1-4樓"
+  ],
+  "phone": "06-2313216",
+  "bed_lic": "55",
+  "bed_open": "55",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 31,
+  "name": "陽光護理之家",
+  "code": "7405310159",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區中山東路25號2樓"
+  ],
+  "phone": "06-3020528",
+  "bed_lic": "22",
+  "bed_open": "22",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 32,
+  "name": "臺南市私立永康永明護理之家",
+  "code": "7405310079",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區永明街25號1-4樓"
+  ],
+  "phone": "06-2027888",
+  "bed_lic": "28",
+  "bed_open": "28",
+  "vent_lic": "2",
+  "vent_open": "2",
+  "day": "0"
+ },
+ {
+  "no": 33,
+  "name": "順天心護理之家",
+  "code": "7405310239",
+  "district": "永康區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "永康區"
+  ],
+  "addresses": [
+   "臺南市永康區中山南路510巷1-13號1-4樓"
+  ],
+  "phone": "06-3020101",
+  "bed_lic": "82",
+  "bed_open": "82",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 34,
+  "name": "二甲護理之家",
+  "code": "7405280049",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區沙崙里凱旋路一段101巷20號1-3樓"
+  ],
+  "phone": "06-2399231",
+  "bed_lic": "66",
+  "bed_open": "66",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 35,
+  "name": "和欣護理之家",
+  "code": "7405280067",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區六甲里凱旋路2段301號"
+  ],
+  "phone": "06-3388011",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 36,
+  "name": "健麗醫護理之家",
+  "code": "7405280021",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區武東里明德路8號1-2樓"
+  ],
+  "phone": "06-3032967",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 37,
+  "name": "寶仁護理之家",
+  "code": "7441281060",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區沙崙里凱旋路一段101巷22號1-4樓"
+  ],
+  "phone": "06-2399230",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 38,
+  "name": "均安護理之家",
+  "code": "7405280085",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區後市里民權三街92號1~4樓"
+  ],
+  "phone": "06-2392669",
+  "bed_lic": "89",
+  "bed_open": "89",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 39,
+  "name": "蘭亭居護理之家",
+  "code": "7405280094",
+  "district": "歸仁區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "歸仁區"
+  ],
+  "addresses": [
+   "臺南市歸仁區長榮路三段400號1-4樓"
+  ],
+  "phone": "06-2300457",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 40,
+  "name": "台南市私立祥允泰護理之家",
+  "code": "7405270043",
+  "district": "仁德區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "仁德區"
+  ],
+  "addresses": [
+   "臺南市仁德區忠義路339號"
+  ],
+  "phone": "06-2709666",
+  "bed_lic": "78",
+  "bed_open": "78",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 41,
+  "name": "慈心護理之家",
+  "code": "7405270034",
+  "district": "仁德區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "仁德區"
+  ],
+  "addresses": [
+   "臺南市仁德區文賢路1段83號"
+  ],
+  "phone": "06-3663666",
+  "bed_lic": "133",
+  "bed_open": "133",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 42,
+  "name": "慈祥護理之家",
+  "code": "7405270070",
+  "district": "仁德區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "仁德區"
+  ],
+  "addresses": [
+   "臺南市仁德區中正路2段1225-1號1-4樓"
+  ],
+  "phone": "06-2791516",
+  "bed_lic": "63",
+  "bed_open": "63",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 43,
+  "name": "溫馨護理之家",
+  "code": "7441270576",
+  "district": "仁德區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "仁德區"
+  ],
+  "addresses": [
+   "臺南市仁德區新田里民安路2段57號1樓"
+  ],
+  "phone": "06-2496667",
+  "bed_lic": "13",
+  "bed_open": "13",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 44,
+  "name": "臺南市私立聖祐護理之家",
+  "code": "7405270061",
+  "district": "仁德區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "仁德區"
+  ],
+  "addresses": [
+   "臺南市仁德區中洲里中洲路715巷156號1-2樓"
+  ],
+  "phone": "06-2668705",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 45,
+  "name": "吉安醫療社團法人附設護理之家",
+  "code": "7305290025",
+  "district": "關廟區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "關廟區"
+  ],
+  "addresses": [
+   "臺南市關廟區北花里中正路435號3-5樓"
+  ],
+  "phone": "06-6025556",
+  "bed_lic": "156",
+  "bed_open": "127",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 46,
+  "name": "葫蘆埤護理之家",
+  "code": "7641140513",
+  "district": "官田區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "官田區"
+  ],
+  "addresses": [
+   "臺南市官田區隆本里中山路2段130巷16號"
+  ],
+  "phone": "06-5790719",
+  "bed_lic": "50",
+  "bed_open": "50",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 47,
+  "name": "融園護理之家",
+  "code": "7405140013",
+  "district": "官田區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "官田區"
+  ],
+  "addresses": [
+   "臺南市官田區渡拔里拔子林86號之5"
+  ],
+  "phone": "06-5793333",
+  "bed_lic": "72",
+  "bed_open": "72",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 48,
+  "name": "台灣基督長老教會新樓醫療財團法人附設麻豆新樓護理之家",
+  "code": "7205040014",
+  "district": "麻豆區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "麻豆區"
+  ],
+  "addresses": [
+   "臺南市麻豆區麻佳路一段207號(馬雅各紀念大樓3-8樓)"
+  ],
+  "phone": "06-5702228",
+  "bed_lic": "200",
+  "bed_open": "200",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 49,
+  "name": "新總爺護理之家",
+  "code": "7405040018",
+  "district": "麻豆區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "麻豆區"
+  ],
+  "addresses": [
+   "臺南市麻豆區南勢里南勢86-11號"
+  ],
+  "phone": "06-5717766",
+  "bed_lic": "66",
+  "bed_open": "66",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 50,
+  "name": "台南市私立佳暘護理之家",
+  "code": "7405050041",
+  "district": "佳里區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "佳里區"
+  ],
+  "addresses": [
+   "臺南市佳里區六安里佳北路161號1-4樓"
+  ],
+  "phone": "06-7215159",
+  "bed_lic": "73",
+  "bed_open": "73",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 51,
+  "name": "辰安護理之家",
+  "code": "7405160015",
+  "district": "西港區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "西港區"
+  ],
+  "addresses": [
+   "臺南市西港區南海里東港街215巷36號1-3樓"
+  ],
+  "phone": "06-7958559",
+  "bed_lic": "75",
+  "bed_open": "75",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 52,
+  "name": "台南縣私立唪口護理之家",
+  "code": "7441060525",
+  "district": "新化區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新化區"
+  ],
+  "addresses": [
+   "臺南市新化區知義里知母義9-15號"
+  ],
+  "phone": "06-5908356",
+  "bed_lic": "92",
+  "bed_open": "92",
+  "vent_lic": "3",
+  "vent_open": "3",
+  "day": "0"
+ },
+ {
+  "no": 53,
+  "name": "台南市私立新化護理之家",
+  "code": "7405060029",
+  "district": "新化區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新化區"
+  ],
+  "addresses": [
+   "臺南市新化區中山路32號1-3樓"
+  ],
+  "phone": "06-5906959",
+  "bed_lic": "73",
+  "bed_open": "73",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 54,
+  "name": "孝心護理之家",
+  "code": "7405080012",
+  "district": "學甲區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "學甲區"
+  ],
+  "addresses": [
+   "臺南市學甲區豐和里美和4-49號"
+  ],
+  "phone": "06-7830536",
+  "bed_lic": "58",
+  "bed_open": "58",
+  "vent_lic": "2",
+  "vent_open": "2",
+  "day": "0"
+ },
+ {
+  "no": 55,
+  "name": "東林護理之家",
+  "code": "7405080049",
+  "district": "學甲區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "學甲區"
+  ],
+  "addresses": [
+   "臺南市學甲區豐和里美豐49-23號1-2樓"
+  ],
+  "phone": "06-7822955",
+  "bed_lic": "74",
+  "bed_open": "74",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 56,
+  "name": "永達醫療社團法人附設永新護理之家",
+  "code": "7341200018",
+  "district": "新市區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新市區"
+  ],
+  "addresses": [
+   "臺南市新市區新市里復興路116號"
+  ],
+  "phone": "06-5890459",
+  "bed_lic": "42",
+  "bed_open": "42",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 57,
+  "name": "永安護理之家",
+  "code": "7405070034",
+  "district": "善化區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "善化區"
+  ],
+  "addresses": [
+   "臺南市善化區光文里21鄰建國路172號1-4樓"
+  ],
+  "phone": "06-5119710",
+  "bed_lic": "68",
+  "bed_open": "68",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 58,
+  "name": "永達醫療社團法人附設永善護理之家",
+  "code": "7341070010",
+  "district": "善化區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "善化區"
+  ],
+  "addresses": [
+   "臺南市善化區民族路166號"
+  ],
+  "phone": "06-5835131",
+  "bed_lic": "117",
+  "bed_open": "108",
+  "vent_lic": "3",
+  "vent_open": "3",
+  "day": "0"
+ },
+ {
+  "no": 59,
+  "name": "開元護理之家",
+  "code": "7405070025",
+  "district": "善化區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "善化區"
+  ],
+  "addresses": [
+   "臺南市善化區成功路266巷25號"
+  ],
+  "phone": "06-5858837",
+  "bed_lic": "99",
+  "bed_open": "99",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 60,
+  "name": "允泰護理之家",
+  "code": "7405010083",
+  "district": "新營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新營區"
+  ],
+  "addresses": [
+   "臺南市新營區信義街61-3號"
+  ],
+  "phone": "06-6333939",
+  "bed_lic": "53",
+  "bed_open": "53",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 61,
+  "name": "佳園護理之家",
+  "code": "7405010154",
+  "district": "新營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新營區"
+  ],
+  "addresses": [
+   "臺南市新營區民榮里17鄰新榮五街100號1-2樓"
+  ],
+  "phone": "06-6570305",
+  "bed_lic": "94",
+  "bed_open": "94",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 62,
+  "name": "長泰護理之家",
+  "code": "7405010136",
+  "district": "新營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新營區"
+  ],
+  "addresses": [
+   "臺南市新營區興安里新進路203號1-3樓"
+  ],
+  "phone": "06-6321199",
+  "bed_lic": "48",
+  "bed_open": "45",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 63,
+  "name": "順康護理之家",
+  "code": "7405010109",
+  "district": "新營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新營區"
+  ],
+  "addresses": [
+   "臺南市新營區公誠街1號1-3樓"
+  ],
+  "phone": "06-6333119",
+  "bed_lic": "41",
+  "bed_open": "40",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 64,
+  "name": "衛生福利部新營醫院附設護理之家",
+  "code": "7541010010",
+  "district": "新營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "新營區"
+  ],
+  "addresses": [
+   "臺南市新營區信義街73號"
+  ],
+  "phone": "06-6351131",
+  "bed_lic": "87",
+  "bed_open": "87",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 65,
+  "name": "營新醫院附設護理之家",
+  "code": "7641011035",
+  "district": "新營區",
+  "kinds": [
+   "本院",
+   "日間照護"
+  ],
+  "districts": [
+   "新營區",
+   "鹽水區"
+  ],
+  "addresses": [
+   "臺南市新營區隋唐街228號5-6樓、隋唐街218號3樓",
+   "臺南市鹽水區治水路254-1號1樓"
+  ],
+  "phone": "06-6592345",
+  "bed_lic": "199",
+  "bed_open": "175",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "30"
+ },
+ {
+  "no": 66,
+  "name": "佑昇護理之家",
+  "code": "7341030016",
+  "district": "白河區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "白河區"
+  ],
+  "addresses": [
+   "臺南市白河區民安路1號4-5樓"
+  ],
+  "phone": "06-6841999",
+  "bed_lic": "68",
+  "bed_open": "68",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 67,
+  "name": "祥安護理之家",
+  "code": "7405030012",
+  "district": "白河區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "白河區"
+  ],
+  "addresses": [
+   "臺南市白河區白河里中山路2-112號1-2樓"
+  ],
+  "phone": "06-6856555",
+  "bed_lic": "59",
+  "bed_open": "59",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 68,
+  "name": "濟安護理之家",
+  "code": "7441110511",
+  "district": "東山區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "東山區"
+  ],
+  "addresses": [
+   "臺南市東山區東正里1鄰東勢1-20號1樓"
+  ],
+  "phone": "06-6803010",
+  "bed_lic": "57",
+  "bed_open": "57",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 69,
+  "name": "懷恩護理之家",
+  "code": "7405130017",
+  "district": "六甲區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "六甲區"
+  ],
+  "addresses": [
+   "臺南市六甲區中正路178-1號1-5樓"
+  ],
+  "phone": "06-6981565",
+  "bed_lic": "55",
+  "bed_open": "55",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 70,
+  "name": "台南市私立康寧護理之家",
+  "code": "7405120057",
+  "district": "下營區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "下營區"
+  ],
+  "addresses": [
+   "臺南市下營區中營里1053號1-4樓"
+  ],
+  "phone": "06-6792296",
+  "bed_lic": "74",
+  "bed_open": "74",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 71,
+  "name": "仁愛護理之家",
+  "code": "7405020043",
+  "district": "鹽水區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "鹽水區"
+  ],
+  "addresses": [
+   "臺南市鹽水區水秀里土庫6-22號1-2樓"
+  ],
+  "phone": "06-6531700",
+  "bed_lic": "88",
+  "bed_open": "88",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 72,
+  "name": "天佑護理之家",
+  "code": "7441020521",
+  "district": "鹽水區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "鹽水區"
+  ],
+  "addresses": [
+   "臺南市鹽水區三和里田寮35-1號"
+  ],
+  "phone": "06-6553159",
+  "bed_lic": "28",
+  "bed_open": "28",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ },
+ {
+  "no": 73,
+  "name": "全恩護理之家",
+  "code": "7441020552",
+  "district": "鹽水區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "鹽水區"
+  ],
+  "addresses": [
+   "臺南市鹽水區武廟路31-1號"
+  ],
+  "phone": "06-6528236",
+  "bed_lic": "43",
+  "bed_open": "43",
+  "vent_lic": "3",
+  "vent_open": "3",
+  "day": "0"
+ },
+ {
+  "no": 74,
+  "name": "私立天心護理之家",
+  "code": "7405020025",
+  "district": "鹽水區",
+  "kinds": [
+   "本院"
+  ],
+  "districts": [
+   "鹽水區"
+  ],
+  "addresses": [
+   "臺南市鹽水區三明里舊營52-1號1樓"
+  ],
+  "phone": "06-6521900",
+  "bed_lic": "25",
+  "bed_open": "25",
+  "vent_lic": "0",
+  "vent_open": "0",
+  "day": "0"
+ }
+]

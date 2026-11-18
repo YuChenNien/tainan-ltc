@@ -1,0 +1,8 @@
+---
+import { Icon } from 'astro-icon/components';
+import { ICONS, ICON_SET } from '../lib/data';
+interface Props { name: string; set?: 'lucide' | 'tabler'; size?: number; }
+const { name, set = ICON_SET, size = 22 } = Astro.props;
+const id = ICONS[name]?.[set] ?? ICONS.info[set];
+---
+<Icon name={id} size={size} class="ico" aria-hidden="true" />

@@ -1,0 +1,11 @@
+---
+import Ico from './Ico.astro';
+import { gradeInfo, type Inst } from '../lib/data';
+interface Props { inst: Inst; set?: 'lucide' | 'tabler'; }
+const { inst, set } = Astro.props;
+const g = gradeInfo(inst);
+---
+<span class={`grade tone-${g.tone}`} title={inst.eval_kind}>
+  <Ico name={g.icon} set={set} size={20} />
+  <span class="grade-text"><strong>{g.text}</strong>{g.year && <span class="grade-year">{g.year}</span>}</span>
+</span>
