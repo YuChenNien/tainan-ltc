@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Ico from '../components/Ico.astro';
+import { insts, url } from '../lib/data';
+const ISSUES = 'https://github.com/YuChenNien/tainan-ltc/issues';
+const built = new Date().toLocaleDateString('zh-TW', { timeZone: 'Asia/Taipei' });
+---
+<Layout title="關於本站">
+  <div class="wrap about">
+    <div class="page-head"><h1>關於本站</h1></div>
+
+    <section class="panel">
+      <h2><Ico name="info" size={26} />這個網站是做什麼的</h2>
+      <p>幫家人查詢、比較臺南市的住宿式長照機構（老人福利機構、護理之家、住宿式長照機構），目前收錄 {insts.length} 家。只整理政府公開資料，讓你在打電話、參觀之前先有基本的認識。</p>
+      <p>本站是民間整理的網站，<strong>不是政府網站</strong>，也沒有替任何機構宣傳或收費。</p>
+    </section>
+
+    <section class="panel">
+      <h2><Ico name="shield" size={26} />資料從哪裡來</h2>
+      <ul>
+        <li>臺南市政府社會局「社會福利機構空位查詢」開放資料（老人福利機構的名稱、床位、收住對象、最近一次評鑑）。</li>
+        <li>臺南市政府社會局「老福機構歷年評鑑結果一覽表」（115 年 1 月 22 日更新），用來標示評鑑年度。</li>
+        <li>臺南市政府衛生局「住宿式長照機構一覽表」（115 年 7 月 21 日更新）。</li>
+        <li>臺南市政府衛生局「一般護理之家名冊」（115 年 8 月 17 日製表）。</li>
+        <li>臺南市政府衛生局「一般護理之家暨住宿式長照機構收費標準表」（115 年 7 月 8 日修訂）。</li>
+      </ul>
+      <p>資料整理日期：2026 年 11 月 18 日；網站最後建置日期：{built}。每家機構頁最下方都有該筆資料的來源與公告日期。</p>
+      <p>本站不使用其他民間平台的資料，也不轉載社群網站的內容。</p>
+    </section>
+
+    <section class="panel">
+      <h2><Ico name="warn" size={26} />使用前請先知道</h2>
+      <ul>
+        <li><strong>收費是官方「上限」，不是實際價格。</strong>實際費用請直接向機構詢問報價；費用試算只是方便你概算。</li>
+        <li><strong>老人福利機構的收費沒有官方公告</strong>，本站標示「待確認」。</li>
+        <li><strong>評鑑一定要看年度。</strong>很多老人福利機構最近一次評鑑是 109 年，距今已有一段時間。護理之家沒有納入同一套評鑑，所以顯示「無評鑑資料」，這不代表好或不好。住宿式長照機構的結果只分合格、不合格、未評鑑。</li>
+        <li><strong>公立／私立／公設民營是依機構名稱判斷</strong>，不是官方欄位；名稱看不出來的標「待確認」。</li>
+        <li><strong>「失智型」標示涵蓋不完整。</strong>只有官方資料明確寫到失智症的機構才會標示，沒有標示不代表沒有提供，請直接洽詢。</li>
+        <li><strong>床位與空位會變動。</strong>請以來電詢問為準。</li>
+        <li><strong>榮民之家</strong>目前沒有可用的官方名冊，暫未收錄。</li>
+        <li>本站內容僅供參考，不是醫療或法律建議，也不能取代實地參觀與評估。入住前請向主管機關或機構確認最新資料。</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2><Ico name="file" size={26} />圖示與照片</h2>
+      <p>圖示使用 Tabler Icons（MIT 授權，可商用）。目前還沒有放任何機構的實景照片；日後只會放取得機構同意或自行拍攝的照片，並註明來源。本站不轉載來路不明或從網路上抓取的照片。</p>
+    </section>
+
+    <section class="panel">
+      <h2><Ico name="link" size={26} />發現資料有誤？</h2>
+      <p>機構搬遷、電話改變、資料跟官方公告不同，都歡迎告訴我們。請到下面的連結留言，寫上機構名稱和哪裡有誤，最好附上官方資料的連結。</p>
+      <p><a class="btn" href={ISSUES} target="_blank" rel="noopener noreferrer"><Ico name="link" size={20} />回報資料錯誤（GitHub，另開新視窗）</a></p>
+      <p class="hint">這個頁面需要 GitHub 帳號才能留言。留言內容是公開的，請不要寫個人隱私資料。</p>
+    </section>
+
+    <p style="margin:24px 0 40px"><a class="btn-line" href={url('/')}><Ico name="home" size={20} />回首頁找機構</a></p>
+  </div>
+</Layout>
