@@ -8,12 +8,13 @@ export type Inst = {
   eval_kind: string; eval_grade: string; eval_year: string;
   fee: string; source_name: string; source_date: string;
   vent_licensed?: number; vent_open?: number; day_open?: number;
+  eval_history?: Record<string, string>; detail_url?: string; beds_licensed_text?: string;
 };
 
 export const insts = raw as unknown as Inst[];
 
 // ---- 圖示：同一個名稱可在兩套圖示庫之間切換（步驟 2 讓你比較後選一套）
-export const ICON_SET: 'lucide' | 'tabler' = 'lucide';
+export const ICON_SET: 'lucide' | 'tabler' = 'tabler';
 export const ICONS: Record<string, { lucide: string; tabler: string }> = {
   welfare: { lucide: 'lucide:heart-handshake', tabler: 'tabler:heart-handshake' },
   nursing: { lucide: 'lucide:stethoscope', tabler: 'tabler:stethoscope' },
@@ -116,3 +117,30 @@ export const countBy = (k: string) => insts.filter((i) => i.category === k).leng
 
 export const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 export const url = (p: string) => `${BASE}${p}`;
+
+// ---- 手動補充資料（官方網站、粉絲專頁），由 data/manual.json 提供
+import manualRaw from '../../data/manual.json';
+export const manual = manualRaw as unknown as Record<string, { website?: string; fanpage?: string }>;
+
+// ---- 官方收費上限（衛生局 115/7/8 收費標準表）
+import feeRaw from '../../data/fee_caps.json';
+export const FEES = feeRaw as any;
+
+// ---- 電話：拆成可點擊的號碼
+export function phoneLinks(p: string): { text: string; href: string }[] {
+  const m = p.match(/0\d{1,3}-?\d{5,8}(?:#\d+)?/g) || [];
+  return m.map((t) => ({ text: t, href: 'tel:' + t.replace(/[^\d+]/g, '') }));
+}
+
+// ---- 地圖連結（只放連結，不嵌入地圖）
+export const mapUrl = (i: Inst) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(i.address);
+
+// ---- 同址或同電話的關聯機構
+const normAddr = (s: string) => s.replace(/[\s　]/g, '').replace(/臺/g, '台').replace(/之\d+.*$/, '').replace(/\d+樓.*$/, '').replace(/[0-9]+-[0-9]+樓.*$/, '');
+export function relatedOf(i: Inst): Inst[] {
+  const ph = new Set(phoneLinks(i.phone).map((x) => x.text));
+  const a = normAddr(i.address);
+  return insts.filter((o) => o.id !== i.id && (
+    (a && normAddr(o.address) === a) || phoneLinks(o.phone).some((x) => ph.has(x.text))
+  ));
+}

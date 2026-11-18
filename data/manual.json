@@ -1,0 +1,4 @@
+{
+  "_說明": "手動補充欄位，鍵為機構編號（例：TN-E-001）。可填 website（官方網站）、fanpage（粉絲專頁）。沒有就不用寫。",
+  "_範例": { "website": "https://example.org", "fanpage": "https://www.facebook.com/example" }
+}

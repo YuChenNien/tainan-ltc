@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Ico from '../../components/Ico.astro';
+import GradeBadge from '../../components/GradeBadge.astro';
+import { insts, typeOf, serviceTags, gradeInfo, bedsText, phoneLinks, mapUrl, relatedOf, manual, FEES, url, type Inst } from '../../lib/data';
+
+export function getStaticPaths() {
+  return insts.map((i) => ({ params: { id: i.id }, props: { inst: i } }));
+}
+const i = Astro.props.inst as Inst;
+const t = typeOf(i);
+const tags = serviceTags(i);
+const g = gradeInfo(i);
+const phones = phoneLinks(i.phone);
+const rel = relatedOf(i);
+const man = manual[i.id] || {};
+const hasCap = i.src !== 'A';
+const history = Object.entries(i.eval_history || {}).sort((a, b) => Number(b[0]) - Number(a[0]));
+const evalNote: Record<string, string> = {
+  A: '老人福利機構評鑑由社會局辦理，每幾年一次，請特別留意「評鑑年度」，年度較早代表資料較舊。',
+  B: '住宿式長照機構評鑑結果分為「合格／不合格／未評鑑」，沒有優、甲、乙、丙之分。',
+  C: '護理之家目前沒有納入同一套等第評鑑，本站查無評鑑資料，不代表品質好或不好。',
+};
+const roomRows = Object.entries(FEES.long_term_monthly) as [string, number][];
+const special = Object.entries(FEES.special_nursing_long_term) as [string, string][];
+---
+<Layout title={i.name}>
+  <div class={`wrap ${t.cls}`}>
+    <nav class="crumbs" aria-label="目前位置">
+      <a href={url('/')}>首頁</a> › <a href={url('/institutions/')}>全部機構</a> › <a href={url(`/institutions/#${t.cls}`)}>{t.short}</a>
+    </nav>
+
+    <header class="detail-head">
+      <div class="tags">
+        <span class="tag tag-type"><Ico name={t.icon} size={16} />{t.short}</span>
+        {tags.map((x) => <span class="tag">{x}</span>)}
+      </div>
+      <h1>{i.name}</h1>
+      <p class="meta"><Ico name="pin" size={20} />{i.address}</p>
+      <GradeBadge inst={i} />
+    </header>
+
+    <div class="detail-grid">
+      <div class="detail-main">
+        <section class="panel" aria-labelledby="s-basic">
+          <h2 id="s-basic"><Ico name="info" size={26} />基本資料</h2>
+          <dl class="kv">
+            <dt><Ico name="pin" size={20} />地址</dt>
+            <dd>{i.address}　<a class="btn-link" href={mapUrl(i)} target="_blank" rel="noopener noreferrer"><Ico name="map" size={18} />在地圖上查看（Google 地圖，另開新視窗）</a></dd>
+            <dt><Ico name="phone" size={20} />電話</dt>
+            <dd>
+              {phones.length ? phones.map((p) => <a class="btn-link" href={p.href}>{p.text}</a>) : '待確認'}
+              {phones.length > 0 && i.phone.replace(/[\d\-#]/g, '').trim().length > 3 && <div class="hint">原始資料：{i.phone}</div>}
+            </dd>
+            <dt><Ico name="bed" size={20} />床位</dt>
+            <dd>{bedsText(i)}
+              {i.src === 'A' && i.tube_beds ? <div class="hint">其中管路、胃造廔口照護床位 {i.tube_beds} 床</div> : null}
+              {i.src === 'A' && i.vacancy != null ? <div class="hint">空位數隨時變動，請來電確認。</div> : null}
+              {i.beds_licensed_text ? <div class="hint">官方原文：{i.beds_licensed_text}</div> : null}
+            </dd>
+            {i.target && <><dt><Ico name="users" size={20} />收住對象</dt><dd>{i.target}</dd></>}
+            {i.extra && <><dt><Ico name="file" size={20} />其他服務</dt><dd>{i.extra}</dd></>}
+            <dt><Ico name="link" size={20} />官方網站</dt>
+            <dd>{man.website ? <a class="btn-link" href={man.website} target="_blank" rel="noopener noreferrer">前往官方網站</a> : <span class="muted">尚未收錄</span>}</dd>
+            <dt><Ico name="link" size={20} />粉絲專頁</dt>
+            <dd>{man.fanpage ? <a class="btn-link" href={man.fanpage} target="_blank" rel="noopener noreferrer">前往粉絲專頁</a> : <span class="muted">尚未收錄</span>}</dd>
+          </dl>
+        </section>
+
+        <section class="panel" aria-labelledby="s-eval">
+          <h2 id="s-eval"><Ico name="award" size={26} />政府評鑑結果</h2>
+          <p><GradeBadge inst={i} /></p>
+          {g.year ? <p>評鑑年度：<strong>{g.year}</strong></p> : null}
+          {history.length > 1 && (
+            <table class="mini">
+              <caption>歷次評鑑（社會局公告）</caption>
+              <thead><tr><th>年度</th><th>等第</th></tr></thead>
+              <tbody>{history.map(([y, gr]) => <tr><td>{y} 年</td><td>{gr}</td></tr>)}</tbody>
+            </table>
+          )}
+          <p class="note">{evalNote[i.src]}</p>
+          {i.name.includes('官田') ? <p class="note">此機構在不同官方表格的記載略有出入，請以主管機關公告為準。</p> : null}
+        </section>
+
+        <section class="panel" aria-labelledby="s-fee">
+          <h2 id="s-fee"><Ico name="money" size={26} />收費（官方上限）</h2>
+          {hasCap ? (
+            <>
+              <p>臺南市衛生局公告的<strong>收費上限</strong>（長期照護，每月）：</p>
+              <table class="mini">
+                <thead><tr><th>房型</th><th>每月上限</th></tr></thead>
+                <tbody>{roomRows.map(([k, v]) => <tr><td>{k}</td><td>{v.toLocaleString('zh-Hant')} 元</td></tr>)}</tbody>
+              </table>
+              <details>
+                <summary>特殊護理另加費用上限</summary>
+                <table class="mini">
+                  <thead><tr><th>項目</th><th>上限</th></tr></thead>
+                  <tbody>{special.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody>
+                </table>
+              </details>
+              <p class="hint">{FEES.unit_note}</p>
+            </>
+          ) : (
+            <p><strong>待確認</strong>：社會局沒有公告老人福利機構的收費，請直接向機構詢問。</p>
+          )}
+          <p class="disclaimer"><Ico name="warn" size={20} />僅供參考，實際以機構報價為準。</p>
+        </section>
+
+        {rel.length > 0 && (
+          <section class="panel" aria-labelledby="s-rel">
+            <h2 id="s-rel"><Ico name="home" size={26} />同址或同電話的關聯機構</h2>
+            <p class="hint">以下機構的地址或電話與本機構相同，可能是同一營運單位的不同部門，也可能只是共用大樓，請自行確認。</p>
+            <ul class="rel-list">
+              {rel.map((r) => <li><a href={url(`/institutions/${r.id}/`)}>{r.name}</a>（{typeOf(r).short}）</li>)}
+            </ul>
+          </section>
+        )}
+
+        <section class="panel source" aria-labelledby="s-src">
+          <h2 id="s-src"><Ico name="shield" size={26} />資料來源</h2>
+          <dl class="kv">
+            <dt>來源</dt><dd>{i.source_name}</dd>
+            <dt>公告／更新日</dt><dd>{i.source_date}</dd>
+            {hasCap && <><dt>收費標準</dt><dd>{FEES.source}</dd></>}
+            {i.detail_url && <><dt>官方詳細頁</dt><dd><a class="btn-link" href={i.detail_url} target="_blank" rel="noopener noreferrer">社會局網頁（另開新視窗）</a></dd></>}
+          </dl>
+          <p class="hint">本站只整理政府公開資料，沒有加入網友評論。資料可能與現況有落差，入住前請親自洽詢與參觀。</p>
+        </section>
+      </div>
+
+      <aside class="detail-side">
+        <div class="panel photo-panel" aria-labelledby="s-photo">
+          <h2 id="s-photo"><Ico name="nophoto" size={26} />環境照片</h2>
+          <div class="photo-ph" role="img" aria-label="尚無實景照片">
+            <Ico name={t.icon} size={64} />
+            <span>尚無實景照片</span>
+          </div>
+          <p class="hint">本站不轉載來路不明的照片。取得機構授權後才會放上，並註明來源。</p>
+        </div>
+        <div class="panel">
+          <h2><Ico name="phone" size={26} />快速聯絡</h2>
+          <p class="side-actions">
+            {phones.map((p) => <a class="btn" href={p.href}><Ico name="phone" size={20} />撥打 {p.text}</a>)}
+            <a class="btn btn-ghost" href={mapUrl(i)} target="_blank" rel="noopener noreferrer"><Ico name="map" size={20} />查看地圖</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
