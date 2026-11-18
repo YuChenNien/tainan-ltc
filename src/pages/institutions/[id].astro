@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Ico from '../../components/Ico.astro';
 import GradeBadge from '../../components/GradeBadge.astro';
-import { insts, typeOf, serviceTags, gradeInfo, bedsText, phoneLinks, mapUrl, relatedOf, manual, FEES, url, type Inst } from '../../lib/data';
+import { insts, typeOf, serviceTags, gradeInfo, bedsText, phoneLinks, mapUrl, relatedOf, ownership, manual, FEES, url, type Inst } from '../../lib/data';
 
 export function getStaticPaths() {
   return insts.map((i) => ({ params: { id: i.id }, props: { inst: i } }));
@@ -14,7 +14,8 @@ const g = gradeInfo(i);
 const phones = phoneLinks(i.phone);
 const rel = relatedOf(i);
 const man = manual[i.id] || {};
-const hasCap = i.src !== 'A';
+const own = ownership(i);
+const hasCap =i.src !== 'A';
 const history = Object.entries(i.eval_history || {}).sort((a, b) => Number(b[0]) - Number(a[0]));
 const evalNote: Record<string, string> = {
   A: '老人福利機構評鑑由社會局辦理，每幾年一次，請特別留意「評鑑年度」，年度較早代表資料較舊。',
@@ -58,6 +59,8 @@ const special = Object.entries(FEES.special_nursing_long_term) as [string, strin
               {i.src === 'A' && i.vacancy != null ? <div class="hint">空位數隨時變動，請來電確認。</div> : null}
               {i.beds_licensed_text ? <div class="hint">官方原文：{i.beds_licensed_text}</div> : null}
             </dd>
+            <dt><Ico name="home" size={20} />經營型態</dt>
+            <dd>{own}<div class="hint">{own === '待確認' ? '機構名稱看不出是公立或私立，請向機構確認。' : '依機構名稱判斷，非官方欄位。'}</div></dd>
             {i.target && <><dt><Ico name="users" size={20} />收住對象</dt><dd>{i.target}</dd></>}
             {i.extra && <><dt><Ico name="file" size={20} />其他服務</dt><dd>{i.extra}</dd></>}
             <dt><Ico name="link" size={20} />官方網站</dt>
@@ -66,6 +69,14 @@ const special = Object.entries(FEES.special_nursing_long_term) as [string, strin
             <dd>{man.fanpage ? <a class="btn-link" href={man.fanpage} target="_blank" rel="noopener noreferrer">前往粉絲專頁</a> : <span class="muted">尚未收錄</span>}</dd>
           </dl>
         </section>
+
+        {man.intro && (
+          <section class="panel" aria-labelledby="s-intro">
+            <h2 id="s-intro"><Ico name="file" size={26} />機構介紹</h2>
+            <p class="intro-text">{man.intro}</p>
+            <p class="hint">資料來源：{man.intro_source || '未註明'}</p>
+          </section>
+        )}
 
         <section class="panel" aria-labelledby="s-eval">
           <h2 id="s-eval"><Ico name="award" size={26} />政府評鑑結果</h2>

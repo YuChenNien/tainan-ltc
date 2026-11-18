@@ -120,7 +120,26 @@ export const url = (p: string) => `${BASE}${p}`;
 
 // ---- 手動補充資料（官方網站、粉絲專頁），由 data/manual.json 提供
 import manualRaw from '../../data/manual.json';
-export const manual = manualRaw as unknown as Record<string, { website?: string; fanpage?: string }>;
+export const manual = manualRaw as unknown as Record<string, { website?: string; fanpage?: string; intro?: string; intro_source?: string }>;
+
+// ---- 公立／私立／公設民營：官方名冊沒有這個欄位，只能依機構名稱判斷；看不出來就是「待確認」
+export type Own = '公立' | '私立' | '公設民營' | '待確認';
+export function ownership(i: Inst): Own {
+  const n = i.name;
+  if (/委託|公設民營|公辦民營/.test(n)) return '公設民營';
+  if (/衛生福利部|臺南市立|台南市立|榮民總醫院|^臺南市政府|^台南市政府/.test(n)) return '公立';
+  if (/私立|財團法人|社團法人|醫療|醫院|診所|基金會|有限公司/.test(n)) return '私立';
+  return '待確認';
+}
+
+// ---- 篩選選項（首頁表單與搜尋頁共用）
+export const NEEDS = [
+  { key: '長照型', hint: '管路或長期臥床', icon: 'tube' },
+  { key: '養護型', hint: '一般失能', icon: 'welfare' },
+  { key: '失智型', hint: '收住失智症', icon: 'brain' },
+  { key: '安養型', hint: '生活能自理', icon: 'sofa' },
+];
+export const OWNS: Own[] = ['公立', '私立', '公設民營'];
 
 // ---- 官方收費上限（衛生局 115/7/8 收費標準表）
 import feeRaw from '../../data/fee_caps.json';
