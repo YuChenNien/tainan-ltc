@@ -28,7 +28,7 @@ const special = Object.entries(FEES.special_nursing_long_term) as [string, strin
 <Layout title={i.name}>
   <div class={`wrap ${t.cls}`}>
     <nav class="crumbs" aria-label="目前位置">
-      <a href={url('/')}>首頁</a> › <a href={url('/institutions/')}>全部機構</a> › <a href={url(`/institutions/#${t.cls}`)}>{t.short}</a>
+      <a href={url('/')}>回到首頁找機構</a> › <a href={url(`/#${t.cls}`)}>{t.short}</a>
     </nav>
 
     <header class="detail-head">
