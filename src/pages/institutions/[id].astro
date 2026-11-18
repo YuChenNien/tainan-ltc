@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Ico from '../../components/Ico.astro';
+import Estimator from '../../components/Estimator.astro';
 import GradeBadge from '../../components/GradeBadge.astro';
 import { insts, typeOf, serviceTags, gradeInfo, bedsText, phoneLinks, mapUrl, relatedOf, ownership, manual, FEES, url, type Inst } from '../../lib/data';
 
@@ -117,6 +118,8 @@ const special = Object.entries(FEES.special_nursing_long_term) as [string, strin
           )}
           <p class="disclaimer"><Ico name="warn" size={20} />僅供參考，實際以機構報價為準。</p>
         </section>
+
+        <Estimator hasCap={hasCap} />
 
         {rel.length > 0 && (
           <section class="panel" aria-labelledby="s-rel">

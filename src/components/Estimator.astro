@@ -1,0 +1,89 @@
+---
+import Ico from './Ico.astro';
+import { FEES } from '../lib/data';
+interface Props { hasCap: boolean; }
+const { hasCap } = Astro.props;
+const rooms = Object.entries(FEES.long_term_monthly) as [string, number][];
+const monthly = (s: string) => Number((s.match(/([\d,]+)元\/月/) || [, '0'])[1].replace(/,/g, ''));
+const sp = Object.entries(FEES.special_nursing_long_term) as [string, string][];
+const items = sp.filter(([k]) => !k.startsWith('壓傷')).map(([k, v]) => ({ k, amt: monthly(v), note: v.includes('另計') ? '（機器租金另計）' : '' }));
+const wounds = sp.filter(([k]) => k.startsWith('壓傷')).map(([k, v]) => ({ k, amt: monthly(v) }));
+---
+<section class="panel est" id="estimator" aria-labelledby="s-est" data-cap={hasCap ? '1' : '0'}>
+  <h2 id="s-est"><Ico name="calc" size={26} />每月費用試算</h2>
+  {hasCap
+    ? <p>先帶入官方「收費上限」，你可以直接改成機構報給你的價格。</p>
+    : <p>社會局沒有公告這類機構的收費，請先向機構詢問報價，再填在下面的「每月基本費用」。</p>}
+
+  <div class="est-grid">
+    {hasCap && (
+      <div class="field">
+        <label for="est-room">房型</label>
+        <select id="est-room">
+          {rooms.map(([k, v]) => <option value={String(v)}>{k}（上限 {v.toLocaleString('zh-Hant')} 元）</option>)}
+        </select>
+      </div>
+    )}
+    <div class="field">
+      <label for="est-base">每月基本費用（元）{hasCap ? '，可自行修改' : '，請輸入機構報價'}</label>
+      <input id="est-base" type="number" inputmode="numeric" min="0" step="100" placeholder={hasCap ? '' : '例如 30000'} />
+    </div>
+  </div>
+
+  {hasCap && (
+    <fieldset class="est-sp">
+      <legend>需要的特殊護理（每月另加，官方上限）</legend>
+      {items.map((it) => (
+        <label class="opt"><input type="checkbox" class="est-item" data-amt={it.amt} /><span><strong>{it.k}</strong><small>＋{it.amt.toLocaleString('zh-Hant')} 元／月{it.note}</small></span></label>
+      ))}
+      <div class="est-wound">
+        <label for="est-wound"><strong>壓傷照護</strong></label>
+        <select id="est-wound">
+          <option value="0">不需要</option>
+          {wounds.map((w) => <option value={String(w.amt)}>{w.k.replace('壓傷照護', '')}　＋{w.amt.toLocaleString('zh-Hant')} 元／月</option>)}
+        </select>
+      </div>
+    </fieldset>
+  )}
+
+  <div class="est-grid">
+    <div class="field">
+      <label for="est-other">其他每月自付（元）：尿布、耗材、交通、自費項目等</label>
+      <input id="est-other" type="number" inputmode="numeric" min="0" step="100" value="0" />
+    </div>
+  </div>
+
+  <div class="est-result" aria-live="polite">
+    <div><span>每月合計</span><strong id="est-month">—</strong></div>
+    <div><span>一年約</span><strong id="est-year">—</strong></div>
+  </div>
+  <p class="hint" id="est-note"></p>
+  <p class="disclaimer"><Ico name="warn" size={20} />僅供參考，實際以機構報價為準。</p>
+</section>
+
+<script>
+  const root = document.getElementById('estimator')!;
+  const $ = (s: string) => root.querySelector(s) as HTMLInputElement;
+  const hasCap = root.dataset.cap === '1';
+  const fmt = (n: number) => n.toLocaleString('zh-Hant') + ' 元';
+  const num = (el: HTMLInputElement) => Math.max(0, Number(el.value) || 0);
+  const base = $('#est-base');
+  if (hasCap) base.value = $('#est-room').value;
+
+  function calc() {
+    let sum = num(base) + num($('#est-other'));
+    if (hasCap) {
+      root.querySelectorAll<HTMLInputElement>('.est-item').forEach((c) => { if (c.checked) sum += Number(c.dataset.amt); });
+      sum += Number($('#est-wound').value);
+    }
+    const empty = !hasCap && !base.value;
+    $('#est-month').textContent = empty ? '請先輸入機構報價' : fmt(sum);
+    $('#est-year').textContent = empty ? '—' : fmt(sum * 12);
+    const over = hasCap && Number($('#est-room').value) < num(base);
+    $('#est-note').textContent = over ? '你填的基本費用高於官方上限，請向機構確認原因。' : (hasCap ? '特殊護理項目以官方公告的每月上限計算；耗材另計，實際可能較低。' : '');
+  }
+  if (hasCap) $('#est-room').addEventListener('change', () => { base.value = $('#est-room').value; calc(); });
+  root.addEventListener('input', calc);
+  root.addEventListener('change', calc);
+  calc();
+</script>

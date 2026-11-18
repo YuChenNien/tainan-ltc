@@ -257,3 +257,18 @@ body { padding-bottom: 0; }
   .cmp-table tr { break-inside: avoid; }
 }
 body:has(#cmpbar:not([hidden])) { padding-bottom: 96px; }
+
+/* ---- 費用試算 ---- */
+.est-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 12px 0; }
+.est .field { display: flex; flex-direction: column; gap: 6px; }
+.est label[for] { font-weight: 700; }
+.est input[type=number], .est select { font: inherit; padding: 10px 12px; border: 2px solid var(--line); border-radius: 10px; min-height: 48px; background: #fff; color: var(--ink); width: 100%; }
+.est input:focus, .est select:focus { outline: 3px solid var(--focus); outline-offset: 1px; }
+.est-sp { border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; margin: 12px 0; }
+.est-sp legend { font-weight: 800; color: var(--primary-dark); padding: 0 6px; }
+.est-wound { display: grid; gap: 6px; padding: 8px; }
+.est-result { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 6px; }
+.est-result div { background: var(--primary-weak); border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column; }
+.est-result strong { font-size: 1.5rem; color: var(--primary-dark); }
+@media (max-width: 520px) { .est-result { grid-template-columns: 1fr; } }
+@media print { .est { break-inside: avoid; } }
